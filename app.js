@@ -1,7 +1,31 @@
 // BUDGET CONTROLLER
 var budgetController = (function() {
 
-    // Some Code
+    var Expense = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var Income = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var data = {
+        allItems: {
+            exp: [],
+            incomes: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
+        }
+    }
+
+
+
 
 })();
 
@@ -61,7 +85,6 @@ var controller = (function(budgetCtrl, UICtrl) {
         
         // 1. Get the field input data
         var input = UICtrl.getInput();
-        console.log(input);
 
         // 2. Add the item to the budget controller
 
@@ -78,7 +101,9 @@ var controller = (function(budgetCtrl, UICtrl) {
             console.log('Application has started.');
             setupEventListeners();
         }
-    }
+    };
 
 
 })(budgetController, UIController);
+
+controller.init();
